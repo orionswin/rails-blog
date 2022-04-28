@@ -15,10 +15,13 @@ class CategoriesController < ApplicationController
     
 
     if @category.save
-      redirect_to "/categories"
+      redirect_to '/categories'
     else
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
