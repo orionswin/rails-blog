@@ -26,6 +26,17 @@ RSpec.describe "CategoriesControllers", type: :request do
     end
   end
 
+  describe "PATCH /categories/1" do
+    it "updates the category" do
+      category = Category.create!(id: 1, title: "New Category", description: "fresh na fresh")
+      patch "/categories/#{category.id}", params: {category: {title: "Edited Category", description: "fresh na edit"}}
+      
+      edited_category = Category.find(category.id)
+      
+      expect(edited_category.title).to eq('Edited Category')
+    end
+  end
+
   describe "GET /categories/1" do
     it "returns the category page" do
       category = Category.create!(id: 1, title: "New Category", description: "fresh na fresh")
