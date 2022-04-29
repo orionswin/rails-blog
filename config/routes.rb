@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   post '/categories' => 'categories#create', as: 'create_category'
   get '/categories/:id/edit' => 'categories#edit', as: 'edit_category'
   patch '/categories/:id' => 'categories#update', as: 'update_category'
-  get '/categories/:id' => 'categories#show', as: 'show_category'
+  get '/categories/:id' => 'categories#show', as: 'category'
 end

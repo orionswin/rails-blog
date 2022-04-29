@@ -1,3 +1,5 @@
+<h1>Categories</h1>
+
 <table>
 	<thead>
 		<tr>
@@ -12,12 +14,14 @@
 		<% @categories.each do |category| %>
 			<tr>
 			<td><%= category.id %></td>
-			<td><%= category.title %></td>
+			<td><%= link_to "#{category.title}", "/categories/#{category.id}" %></td>
 			<td><%= category.description %></td>
 			
 			</tr>
 		<% end %>
 	</tbody>
 </table>
+
+<br>
 
 <%= link_to 'New category', new_category_path %>
