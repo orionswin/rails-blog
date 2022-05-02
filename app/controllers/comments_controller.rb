@@ -6,15 +6,16 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comments = @article.comments.build
+    @comment = @article.comments.build
   end
 
   def create
-    @comments = @article.comments.build(comment_params)
-    if @comment.save
+    @comment = @article.comments.build(comment_params)
+    if @comment.save!
       redirect_to article_comments_path
     else
       render :new
+    end
   end
 
   private
