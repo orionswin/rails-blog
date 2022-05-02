@@ -1,0 +1,12 @@
+<%= form_with model: [@category, @task],local: true do |f|%>
+
+<p>
+  <%= f.label :body %><br/>
+  <%= f.text_field :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
